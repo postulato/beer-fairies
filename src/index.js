@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {app} from './firebase';
-
-console.log(app);
+// import {app} from './firebase';
+import { MainHeader } from './components';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Beer fairies</h1>
+    <MainHeader />
   </React.StrictMode>,
   document.getElementById('root')
 );
