@@ -5,7 +5,7 @@ export const MainHeader = () => {
 
   return (
     <Wrapper>
-      <Heading>Добро пожаловать в "Пивные феи и рыжы пёс" офишиал!</Heading>
+      <Heading>Добро пожаловать в "ВИНЯ БАЛБИК" офишиал!</Heading>
     </Wrapper>
   );
 };
