@@ -2,14 +2,16 @@ import React from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import { imgs } from '../../images';
 import { ImgPiece } from '../ImgPiece/ImgPiece';
+import { getRandom } from '../../utils';
+import _ from 'lodash';
 
 export const VerticalParallax = ({ children, withPieces }) => {
   const offsetCheck = ((pagesLength, imagesLength) => {
     const step = pagesLength / imagesLength;
-    const offset = step;
+    let offset = step;
     return () => {
       offset += step;
-      return offset;
+      return offset - 0.5;
     };
   })(children.length, imgs.length);
 
@@ -22,8 +24,12 @@ export const VerticalParallax = ({ children, withPieces }) => {
       ))}
 
       {withPieces &&
-        imgs.map((imgUrl, index) => (
-          <ParallaxLayer key={index} offset={offsetCheck()}>
+        _.shuffle(imgs).map((imgUrl, index) => (
+          <ParallaxLayer
+            key={index}
+            offset={offsetCheck()}
+            speed={getRandom(4)}
+          >
             <ImgPiece src={imgUrl} isRandomRotated />
           </ParallaxLayer>
         ))}

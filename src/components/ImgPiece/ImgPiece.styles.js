@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const getRandom = (max) => Math.round(Math.random() * max);
+import { getRandom } from '../../utils/random';
 
 export default {
   Img: styled.img`
@@ -8,9 +7,12 @@ export default {
     filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.3));
   `,
   ImgWrapper: styled.div`
-    width: 10vw;
+    width: 5vmax;
     ${({ isRandomRotated }) =>
       isRandomRotated ? `transform: rotate(${getRandom(360)}deg)` : ''};
-    margin-left: ${getRandom(90)}%;
+    margin-left: ${() => getRandom(90)}%;
+    @media screen and (max-width: 700px) {
+      width: 10vw;
+    }
   `,
 };
