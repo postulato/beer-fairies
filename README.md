@@ -1,2 +1,4 @@
 # Official beer fairies web app
-## Install
+## How to install
+download repo, type
+``` npm install ```
