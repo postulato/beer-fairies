@@ -2,3 +2,5 @@
 ## How to install
 download repo, type
 ``` npm install ```
+
+## How to launch
