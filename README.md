@@ -4,3 +4,5 @@ download repo, type
 ``` npm install ```
 
 ## How to launch
+type 
+``` npm start ```
